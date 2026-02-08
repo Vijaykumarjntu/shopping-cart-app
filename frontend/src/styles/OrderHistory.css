@@ -1,0 +1,168 @@
+.order-history-container {
+  padding: 32px 0;
+}
+
+.order-history-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.order-history-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.order-history-header svg {
+  width: 32px;
+  height: 32px;
+  color: #2563eb;
+}
+
+.order-history-empty {
+  text-align: center;
+  padding: 64px 20px;
+}
+
+.order-history-empty svg {
+  width: 64px;
+  height: 64px;
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+.order-history-empty h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.order-history-empty p {
+  color: #6b7280;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.order-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.order-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.order-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.order-date svg {
+  width: 16px;
+  height: 16px;
+}
+
+.order-amount {
+  text-align: right;
+}
+
+.order-total-amount {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.order-total-amount svg {
+  width: 20px;
+  height: 20px;
+}
+
+.order-status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.order-status.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.order-status.processing {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.order-status.shipped {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.order-status.delivered {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.order-items {
+  margin-top: 16px;
+}
+
+.order-items-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.order-item:not(:last-child) {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.order-item-name {
+  color: #374151;
+}
+
+.order-item-quantity {
+  color: #6b7280;
+  margin-left: 8px;
+}
+
+.order-item-price {
+  font-weight: 500;
+  color: #111827;
+}
