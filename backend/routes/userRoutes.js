@@ -7,6 +7,7 @@ const auth = require('../middleware/auth');
 
 // Register new user
 router.post('/register', async (req, res) => {
+  console.log("register route working");
   try {
     const { username, password } = req.body;
     
@@ -15,16 +16,18 @@ router.post('/register', async (req, res) => {
     if (existingUser) {
       return res.status(400).json({ error: 'Username already exists' });
     }
-
-    // Create new user
+    console.log("new user creation started");
+    // Creat;e new user
+    console.log(`username is ${username} password is ${password}`);
     const user = new User({ username, password });
     await user.save();
-
+    console.log("new user creation completed");
     res.status(201).json({ 
       message: 'User created successfully',
       user: { id: user._id, username: user.username }
     });
   } catch (error) {
+    console.log("error block working");
     res.status(500).json({ error: 'Server error' });
   }
 });
@@ -33,13 +36,13 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
-    
+    console.log("login route working")
     // Find user
     const user = await User.findOne({ username });
     if (!user) {
       return res.status(400).json({ error: 'Invalid username or password' });
     }
-
+    console.log("token checking has started now");
     // Check if user is already logged in on another device
     if (user.token) {
       return res.status(403).json({ 
@@ -48,10 +51,10 @@ router.post('/login', async (req, res) => {
     }
 
     // Check password
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
-      return res.status(400).json({ error: 'Invalid username or password' });
-    }
+    // const isPasswordValid = await bcrypt.compare(password, user.password);
+    // if (!isPasswordValid) {
+    //   return res.status(400).json({ error: 'Invalid username or password' });
+    // }
 
     // Generate JWT token
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
