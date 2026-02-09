@@ -213,7 +213,8 @@ app.post('/api/seed', async (req, res) => {
   if (process.env.NODE_ENV === 'production' && !req.headers['admin-key']) {
     return res.status(403).json({ error: 'Admin key required in production' });
   }
-  
+  // https://shopping-cart-app-1.onrender.com 
+  // curl -X POST https://shopping-cart-app-1.onrender.com/api/seed -H "admin-key: your-secret-key"
   try {
     const { seedDatabase } = require('./seed');
     await seedDatabase();
