@@ -216,8 +216,8 @@ app.post('/api/seed', async (req, res) => {
   // https://shopping-cart-app-1.onrender.com 
   // curl -X POST https://shopping-cart-app-1.onrender.com/api/seed -H "admin-key: your-secret-key"
   try {
-    const { seedDatabase } = require('./seed');
-    await seedDatabase();
+    const abc = require('./seed');
+    await abc();
     res.json({ 
       success: true, 
       message: 'Database seeded successfully' 
