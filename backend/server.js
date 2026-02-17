@@ -133,11 +133,12 @@ const connectDB = async () => {
     
     console.log('🔗 Connecting to MongoDB...');
     
-    await mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      serverSelectionTimeoutMS: 5000,
-    });
+    // await mongoose.connect(mongoURI, {
+    //   useNewUrlParser: true,
+    //   useUnifiedTopology: true,
+    //   serverSelectionTimeoutMS: 5000,
+    // });
+    await mongoose.connect(mongoURI);
     
     console.log('✅ MongoDB Connected Successfully!');
     
